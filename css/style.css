@@ -47,16 +47,19 @@ main {
   min-height: 100px;
 }
 
-.wallpaper img {
+.wallpaper .morph-image {
   position: absolute;
   bottom: 32%;
   left: 50%;
   -webkit-transform: translateX(-56%);
           transform: translateX(-56%);
   width: 275px;
+  height: 200px;
+  background-image: url("./../images/illustration-woman-online-mobile.svg");
+  background-repeat: no-repeat;
 }
 
-.wallpaper::before {
+.wallpaper::after {
   content: '';
   background-image: url("./../images/bg-pattern-mobile.svg");
   background-repeat: no-repeat;
@@ -95,6 +98,10 @@ section .expandable p {
   margin-top: 1rem;
   display: none;
   padding-right: 2rem;
+  width: 70ch;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 section .expandable::before {
@@ -129,5 +136,30 @@ section .expandable.open::before {
 
 section .expandable:hover:not(.open) h3 {
   color: #f47c57;
+}
+
+@media (min-width: 670px) {
+  main {
+    overflow: hidden;
+    padding-left: 0;
+    margin: 10% auto 20px;
+    max-width: 920px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: minmax(250px, 420px) minmax(200px, 480px);
+        grid-template-columns: minmax(250px, 420px) minmax(200px, 480px);
+  }
+  .wallpaper .morph-image {
+    background-image: url("./../images/illustration-woman-online-desktop.svg");
+    width: 500px;
+    height: 360px;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    left: -134px;
+    bottom: 15px;
+  }
+  .wallpaper::after {
+    background-image: url("./../images/bg-pattern-desktop.svg");
+  }
 }
 /*# sourceMappingURL=style.css.map */
