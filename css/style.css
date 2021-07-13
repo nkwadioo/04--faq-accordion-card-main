@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#6565e7), to(#af67e9));
+  background-image: linear-gradient(0deg, #6565e7, #af67e9);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 12px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 12px;
+  color: #787887;
+}
+
+main {
+  background-color: white;
+  border-radius: 25px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: calc(100px + 1.5rem);
+}
+
+.wallpaper {
+  position: relative;
+  min-height: 100px;
+}
+
+.wallpaper img {
+  position: absolute;
+  bottom: 32%;
+  left: 50%;
+  -webkit-transform: translateX(-56%);
+          transform: translateX(-56%);
+  width: 275px;
+}
+
+.wallpaper::before {
+  content: '';
+  background-image: url("./../images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  width: 275px;
+  height: 100%;
+  position: absolute;
+  top: -26px;
+  left: 51%;
+  -webkit-transform: translateX(-47%);
+          transform: translateX(-47%);
+}
+
+h2 {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+section .expandable {
+  padding: .2rem 0 20px 0;
+  margin-right: .5rem;
+  border-bottom: 1px solid #e7e7e9;
+  position: relative;
+  cursor: pointer;
+}
+
+section .expandable h3 {
+  font-weight: 400;
+  color: #4a4b5e;
+}
+
+section .expandable p {
+  margin-top: 1rem;
+  display: none;
+  padding-right: 2rem;
+}
+
+section .expandable::before {
+  content: '';
+  width: 11px;
+  height: 7px;
+  position: absolute;
+  right: 2px;
+  top: .5rem;
+  background-image: url("./../images/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+section .expandable:not(:first-child) {
+  margin-top: 1rem;
+}
+
+section .expandable.open h3 {
+  font-weight: 700 !important;
+}
+
+section .expandable.open p {
+  display: block;
+}
+
+section .expandable.open::before {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+section .expandable:hover:not(.open) h3 {
+  color: #f47c57;
+}
+/*# sourceMappingURL=style.css.map */
